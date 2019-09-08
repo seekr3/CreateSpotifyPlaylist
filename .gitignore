@@ -1,6 +1,7 @@
 scratch.js
 
 # Logs
+log
 log.json
 logs
 *.log
