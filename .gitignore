@@ -1,6 +1,7 @@
 scratch.js
 
 # Logs
+log.json
 logs
 *.log
 npm-debug.log*
