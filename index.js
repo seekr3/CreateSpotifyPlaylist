@@ -69,4 +69,4 @@ async function main() {
 
 }
 
-wrap(main);
+wrap(main());

@@ -34,8 +34,10 @@ const error = e => {
 }
 
 function wrap(prom) {
-    return prom()
-        .catch(error);
+    try {
+        prom.catch(error);
+    }
+    catch(e) { error(prom); }
 }
 
 module.exports = wrap;

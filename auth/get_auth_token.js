@@ -12,7 +12,7 @@ const
     read,
     writeToken,
   } = require(util + 'fs'),
-  wrap = require(util + 'asyncRouteWrapper.js'),
+  wrapRoute = require(util + 'asyncRouteWrapper.js'),
   scope = require('./scope.js'),
   error = require(util + 'error')
 ;
@@ -47,7 +47,7 @@ const accounts = axios.create({
 
 app.get('/auth', (req, res) => res.redirect(authorize));
 
-app.get('/callback', wrap(async (req, res) => {
+app.get('/callback', wrapRoute(async (req, res) => {
 
   const { data } = await accounts.post('', '', {
     params: {
@@ -85,7 +85,7 @@ async function checkRefresh() {
   const {
     expire_time,
     refresh_token,
-  } = await read('./config/access_token.json');
+  } = await read('./access_token.json');
 
   if (expire_time <= Date.now()) {
 
@@ -109,7 +109,7 @@ async function checkRefresh() {
 async function getAuth() {
   try {
     await checkRefresh();
-    return (await read('./config/access_token.json')).Authorization;
+    return (await read('./access_token.json')).Authorization;
   }
   catch(e) {
     getToken();

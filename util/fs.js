@@ -21,7 +21,7 @@ const
         refresh_token,
         token_type,
         expires_in,
-    }) => write('./config/access_token.json', {
+    }) => write('./auth/access_token.json', {
         Authorization: `${token_type} ${access_token}`,
         refresh_token,
         expire_time: Date.now() + expires_in * 1000,
