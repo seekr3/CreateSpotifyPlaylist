@@ -9,19 +9,21 @@ const
   app = require('express')(),
 
   {
-    readSync,
     read,
     writeToken,
   } = require(util + 'fs'),
-  wrap = require(util + 'asyncRouteWrapper.js')
+  wrap = require(util + 'asyncRouteWrapper.js'),
+  scope = require('./scope.js'),
   error = require(util + 'error')
 ;
 
 const
   port = 8888,
-  appUrl = `http://localhost:${port}/`
-  client_id = '0e654e41732e4be6b327aea10e62aca2',
-  client_secret = '36c074fce9324fe4922a76a6b9843210',
+  appUrl = `http://localhost:${port}/`,
+  {
+    client_id,
+    client_secret,
+  } = process.env,
   redirect_uri = appUrl + 'callback'
 ;
 
@@ -29,7 +31,7 @@ const authorize = 'https://accounts.spotify.com/authorize?' + stringify({
     response_type: 'code',
     client_id,
     redirect_uri,
-    scope: readSync('./config/scope.json').join(' '),
+    scope,
   })
 ;
 

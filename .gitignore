@@ -1,8 +1,9 @@
 scratch.js
+access_token.json
+log.json
+api
 
 # Logs
-log
-log.json
 logs
 *.log
 npm-debug.log*

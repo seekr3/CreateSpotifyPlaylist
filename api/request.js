@@ -1,10 +1,13 @@
 const
-  util = './../util/',
+  root = './../',
+  util = root + 'util/',
+  auth = root + 'auth/',
   {
     read,
   } = require(util + 'fs'),
+
   axios = require('axios'),
-  getAuth = require('./get_auth_token')
+  getAuth = require(auth + 'get_auth_token')
 ;
 
 function cleanLastfm(data) {

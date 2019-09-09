@@ -1,4 +1,4 @@
-[
+module.exports = [
     "user-read-recently-played",
     "user-top-read",
   
@@ -24,4 +24,4 @@
     
     "user-follow-read",
     "user-follow-modify"
-  ]
+  ];
