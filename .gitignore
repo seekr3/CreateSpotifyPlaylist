@@ -3,6 +3,8 @@ access_token.json
 log.json
 api
 
+.DS_Store
+
 # Logs
 logs
 *.log
