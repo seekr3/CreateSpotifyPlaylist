@@ -13,7 +13,7 @@ const
     writeToken,
   } = require(util + 'fs'),
   wrapRoute = require(util + 'asyncRouteWrapper.js'),
-  scope = require('./scope.js'),
+  scope = require('./scope.js').join(' '),
   error = require(util + 'error')
 ;
 
@@ -112,7 +112,6 @@ async function getAuth() {
     return (await read('./auth/access_token.json')).Authorization;
   }
   catch(e) {
-    console.log(e);
     getToken();
     throw 'no access token, must authenticate first';
   }
