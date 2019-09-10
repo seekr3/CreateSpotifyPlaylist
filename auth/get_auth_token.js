@@ -85,7 +85,7 @@ async function checkRefresh() {
   const {
     expire_time,
     refresh_token,
-  } = await read('./access_token.json');
+  } = await read('./auth/access_token.json');
 
   if (expire_time <= Date.now()) {
 
@@ -109,9 +109,10 @@ async function checkRefresh() {
 async function getAuth() {
   try {
     await checkRefresh();
-    return (await read('./access_token.json')).Authorization;
+    return (await read('./auth/access_token.json')).Authorization;
   }
   catch(e) {
+    console.log(e);
     getToken();
     throw 'no access token, must authenticate first';
   }
