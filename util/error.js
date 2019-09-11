@@ -23,7 +23,7 @@ const error = e => {
             console.error('status:', status);
             console.error('headers:', headers);
         
-        } else if (request) console.error('request:', request);
+        } else if (request) console.error(request, '\nrequest error');
 
         else console.error('Error', e);
         

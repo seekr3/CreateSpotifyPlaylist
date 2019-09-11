@@ -13,7 +13,7 @@ const
     writeToken,
   } = require(util + 'fs'),
   wrapRoute = require(util + 'asyncRouteWrapper.js'),
-  scope = require('./scope.js').join(' '),
+  scope = require('./scope.js'),
   error = require(util + 'error')
 ;
 

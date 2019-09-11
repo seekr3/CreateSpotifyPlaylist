@@ -53,6 +53,8 @@ async function main() {
 
     var data = await createArtistPlaylist(artist, popular);
 
+    return;
+
     data = data.map(({
         album,
         artists,

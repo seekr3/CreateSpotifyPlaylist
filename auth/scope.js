@@ -24,4 +24,4 @@ module.exports = [
     
     "user-follow-read",
     "user-follow-modify"
-  ];
+  ].join(' ');
