@@ -10,7 +10,7 @@
   "author": "AB",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "child_process": "^1.0.2",
     "dotenv": "^8.1.0",
     "express": "^4.16.4",
